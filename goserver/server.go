@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os/exec"
 )
 
 func handleSubmit(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +18,27 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 			panic(err);
 		}
 
-		fmt.Fprintf(w, "Form submission detected!\n");
+		if r.FormValue("firstname") == "" || r.FormValue("lastname") == "" || r.FormValue("phonenumber1") == "" {
+			http.Redirect(w, r, "../", 400);
+		} else {
+			msg := ""
+			if r.FormValue("message") != "" {
+				msg = r.FormValue("message")
+			}
+			fmt.Printf("./send_long_range \"" + r.FormValue("firstname") + " " + r.FormValue("lastname") + "\" " + r.FormValue("birthdate") + " " + r.FormValue("phonenumber1") + " " + r.FormValue("state") + " " + msg + "\n")
+			command := exec.Command("./send_long_range", "\"" + r.FormValue("firstname") + " " + r.FormValue("lastname") + "\"", r.FormValue("birthdate"), r.FormValue("phonenumber1"), r.FormValue("state"), msg)
+			output, err := command.CombinedOutput()
+			
+			if err != nil {
+				fmt.Printf("Error: %s\n", err.Error())
+				fmt.Printf("Output: %s\n", output);
+				w.WriteHeader(http.StatusInternalServerError)
+				fmt.Fprintf(w, "500 Internal Server Error\n")
+			} else {
+				http.Redirect(w, r, "/success/", 200)
+			}
+		}
+/*
 		fmt.Fprintf(w, "firstname: %s\n", r.FormValue("firstname"));
 		fmt.Fprintf(w, "middlename: %s\n", r.FormValue("middlename"));
 		fmt.Fprintf(w, "lastname: %s\n", r.FormValue("lastname"));
@@ -28,6 +49,7 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "phonenumber3: %s\n", r.FormValue("phonenumber3"));
 		fmt.Fprintf(w, "message: %s\n", r.FormValue("message"));
 		fmt.Fprintf(w, "plan: %s\n", r.FormValue("plan"));
+*/
 	}
 }
 

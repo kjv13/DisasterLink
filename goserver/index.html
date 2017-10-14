@@ -91,46 +91,49 @@
             <h2 class="section-heading">Notify Loved Ones</h2>
             <!-- Form Goes here-->
               <form action="/submit/" method="post">
-                First name: 
-                <input type="text" name="firstname" value="John">
-            <br>
-                Middle name:
-                <input type="text" name="middlename" value="Francis">
-            <br>
-                Last name:
-                <input type="text" name="lastname" value="Doe">
-            <br>
-                Birth date:
-                <input type="date" name="birthdate" value="">
-                <br><br>
-                Condition:<br>
-                <input type="radio" name="condition" value="uninjured">Uninjured
-                  <br>
-                <input type="radio" name="condition" value="minorinjury">Minor injury
-                  <br>
-                <input type="radio" name="condition" value="severeinjury">Severe injury
-                  <br><br>
-                Phone Number to contact 1:<br>
-                <input type="tel" name="phonenumber1" value="123-456-7890">
-                <br>
-                Phone Number to contact 2:<br>
-                <input type="tel" name="phonenumber2" value="123-456-7890">
-                <br>
-                Phone Number to contact 3:<br>
-                <input type="tel" name="phonenumber3" value="123-456-7890">
-                  <br><br>
-                Message:<br>
-                <input type="text" name="message" value="Type Message Here">
-                <br><br>
-                  Plan:<br>
-                <input type="radio" name="plan" value="staying">Staying
-                  <br>
-                <input type="radio" name="plan" value="needevacuation">Need Evacuation
-                  <br>
-                <input type="radio" name="plan" value="planningevacuation">Planning on Evacuation
-                      
-                  <br><br>
-                  <input type="submit" value="Submit">
+                <div class="form-group">
+                  <label for="firstname">First Name:</label>
+                  <input type="text" name="firstname" placeholder="John" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="middlename">Middle Name:</label>
+                  <input type="text" name="middlename" placeholder="Francis" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="lastname">Last Name:</label>
+                  <input type="text" name="lastname" placeholder="Doe" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="birthdate">Birthdate:</label>
+                  <input type="date" name="birthdate" placeholder="010169" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>State:</label>
+                  <label class="form-check-label"><input type="radio" name="state" value="0" checked="checked" class="form-control"> Uninjured</label>
+                  <label class="form-check-label"><input type="radio" name="state" value="1" class="form-control"> Minor Injury</label>
+                  <label class="form-check-label"><input type="radio" name="state" value="2" class="form-control"> Severe injury</label>
+                </div>
+                <div class="form-group">
+                  <label for="phonenumber1">Phone Number to contact 1:</label><input type="tel" name="phonenumber1" placeholder="123-456-7890" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="phonenumber2">Phone Number to contact 2:</label><input type="tel" name="phonenumber2" placeholder="123-456-7890" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="phonenumber3">Phone Number to contact 3:</label><input type="tel" name="phonenumber3" placeholder="123-456-7890" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="message">Message:</label><textarea name="message" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Plan:</label>
+                  <label class="form-check-label"><input type="radio" name="plan" value="0" class="form-control" checked="checked"> Staying</label>
+                  <label class="form-check-label"><input type="radio" name="plan" value="1" class="form-control"> Need Evacuation</label>
+                  <label class="form-check-label"><input type="radio" name="plan" value="2" class="form-control"> Planning on Evacuation</label>
+                </div>
+                <div class="form-control">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
               </form>
               <!--End Form-->
             <p class="lead">By submitting this forum, you are sending data to the web that will let others know of your condition.</p>
