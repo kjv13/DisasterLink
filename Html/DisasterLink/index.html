@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DisasterLink</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">DisasterLink</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#notify">Notify Loved Ones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#liveupdates">Live Updates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+      <div id="top"></div>
+    <header class="intro-header">
+      <div class="container">
+        <div class="intro-message">
+          <h1>Disaster Link</h1>
+          <h3>Stay Connected</h3>
+          <hr class="intro-divider">
+          <ul class="list-inline intro-social-buttons">
+            <li class="list-inline-item">
+              <a href="#notify" class="btn btn-secondary btn-lg">
+                <i class="fa fa-user-circle-o fa-fw"></i>
+                <span class="network-name">Notify Loved ones</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#liveupdates" class="btn btn-secondary btn-lg">
+                <i class="fa fa-refresh fa-fw"></i>
+                <span class="network-name">Live Updates</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#about" class="btn btn-secondary btn-lg">
+                <i class="fa fa-info-circle fa-fw"></i>
+                <span class="network-name">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+      <div id="notify"></div>
+    <section class="content-section-a">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <hr class="section-heading-spacer">
+            <div class="clearfix" ></div>
+            <h2 class="section-heading">Notify Loved Ones</h2>
+            <!-- Form Goes here-->
+              <form action="/submit" method="post">
+                First name: 
+                <input type="text" name="firstname" value="John">
+            <br>
+                Last name:
+                <input type="text" name="lastname" value="Doe">
+            <br>
+                Birth date:
+                <input type="date" name="birthdate" value="">
+                <br><br>
+                Condition:<br>
+                <input type="radio" name="condition" value="uninjured">Uninjured
+                  <br>
+                <input type="radio" name="condition" value="minorinjury">Minor injury
+                  <br>
+                <input type="radio" name="condition" value="severeinjury">Severe injury
+                  <br><br>
+                Phone Number to contact 1:<br>
+                <input type="tel" name="phonenumber1" value="123-456-7890">
+                <br>
+                Phone Number to contact 2:<br>
+                <input type="tel" name="phonenumber2" value="123-456-7890">
+                <br>
+                Phone Number to contact 3:<br>
+                <input type="tel" name="phonenumber3" value="123-456-7890">
+                  <br><br>
+                Message:<br>
+                <input type="text" name="message" value="Type Message Here">
+                <br><br>
+                  Plan:<br>
+                <input type="radio" name="plan" value="staying">Staying
+                  <br>
+                <input type="radio" name="plan" value="needevacuation">Need Evacuation
+                  <br>
+                <input type="radio" name="plan" value="planningevacuation">Planning on Evacuation
+                      
+                  <br><br>
+                  <input type="submit" value="Submit">
+              </form>
+              <!--End Form-->
+            <p class="lead">By submitting this forum, you are sending data to the web that will let others know of your condition.</p>
+          </div>
+          <div class="col-lg-5 mr-auto">
+            <img class="img-fluid" src="img/ipad.png" alt="">
+          </div>
+        </div>
+
+      </div>
+      <!-- /.container -->
+    </section>
+<div id="liveupdates"></div>
+    <section class="content-section-b">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-5 mr-auto order-lg-2">
+            <hr class="section-heading-spacer">
+            <div class="clearfix" ></div>
+            <h2 class="section-heading" >Live Updates</h2>
+            <p class="lead">Updates will be displayed here, check back regularly for more information!</p>
+          </div>
+          <div class="col-lg-5 ml-auto order-lg-1">
+            <img class="img-fluid" src="img/dog.png" alt="">
+          </div>
+        </div>
+
+      </div>
+      <!-- /.container -->
+
+    </section>
+    <!-- /.content-section-b -->
+<div id="about"></div>
+    <section class="content-section-a">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+              
+            <h2 class="section-heading">About</h2>
+            <p class="lead">DisasterLink allows you to send a message to loved ones during cellular outage caused by natural disasters. Your status will be entered into a database to allow others to see if you are safe.</p>
+          </div>
+          <div class="col-lg-5 mr-auto ">
+            <img class="img-fluid" src="img/phones.png" alt="">
+          </div>
+        </div>
+
+      </div>
+      <!-- /.container -->
+
+    </section>
+    <!-- /.content-section-a -->
+
+    
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#top">Home</a>
+          </li>
+          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#about">Notify Loved Ones</a>
+          </li>
+          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#services">Live Updates</a>
+          </li>
+          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#about">About</a>
+          </li>
+        </ul>
+        <p class="copyright text-muted small">Copyright &copy; DisasterLink 2017. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
