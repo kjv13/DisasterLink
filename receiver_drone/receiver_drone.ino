@@ -57,8 +57,8 @@ void loop()
       Serial.print("Recieved birthday...");
       
       while(!radio.available());
-      char birthday[6 + 1];
-      readStr(birthday, 6);
+      char birthday[10 + 1];
+      readStr(birthday, 10);
 
       Serial.println(birthday);
 		}
@@ -80,9 +80,9 @@ void loop()
       while(!radio.available());
       radio.read(&status, sizeof(status));
       
-      if(status == 0) Serial.println("OK");
-      else if(status == 1) Serial.println("not OK");
-      else if(status == 2) Serial.println("dead");
+      if(status == 0) Serial.println("Uninjured");
+      else if(status == 1) Serial.println("Minor injury");
+      else if(status == 2) Serial.println("Major injury");
 		}
    else if(cmd == 0x05)
    {

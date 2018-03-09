@@ -1,0 +1,11 @@
+[Unit]
+Description=DisasterLink
+
+[Service]
+Type=simple
+ExecStart=/home/pi/goserver/server
+User=root
+WorkingDirectory=/home/pi/goserver
+
+[Install]
+WantedBy=multi-user.target

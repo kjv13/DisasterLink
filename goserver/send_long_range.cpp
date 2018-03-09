@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 		0xFF, uint, char[...]	receive live update
 	*/
 	radio.begin();
+	radio.printDetails();
 	const uint8_t pipes[][6] = {"1Node","2Node"};
 	uint8_t write_address = 0x10;
 	uint8_t read_address = 0x20;
@@ -28,7 +29,7 @@ int main(int argc, char **argv)
 	radio.startListening();
 
 	if((argc != 5 && argc != 6)
-		|| strlen(argv[2]) != 6		// birthday must be of the form MMDDYY
+		|| strlen(argv[2]) != 10		// birthday must be of the form MMDDYY
 		|| strlen(argv[3]) != 10	// phone must be of the form AAABBBCCCC
 		|| strlen(argv[4]) != 1)		// status must be a single digit
 	{
@@ -70,7 +71,7 @@ int main(int argc, char **argv)
 	printf("Sending birthday...");
 	cmd = 0x02;
 	if(!radio.write(&cmd, sizeof(cmd))
-		|| !radio.write(argv[2], 6))
+		|| !radio.write(argv[2], 10))
 	{
 		printf("failed\n\n");
 		return 1;
